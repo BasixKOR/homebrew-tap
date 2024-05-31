@@ -12,5 +12,14 @@ cask "fastdmg" do
     strategy :header_match
   end
 
+  zap trash: [
+    "~/Library/Application Support/Mythic",
+    "~/Library/Caches/xyz.blackxfiied.Mythic",
+    "~/Library/Containers/xyz.blackxfiied.Mythic",
+    "~/Library/HTTPStorages/xyz.blackxfiied.Mythic",
+    "~/Library/HTTPStorages/xyz.blackxfiied.Mythic.binarycookies",
+    "~/Library/Preferences/xyz.blackxfiied.Mythic.plist",
+  ]
+
   app "FastDMG.app"
 end
