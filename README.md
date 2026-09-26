@@ -13,6 +13,12 @@ brew install BasixKOR/tap/fastdmg
 brew install BasixKOR/tap/mythic
 ```
 
+## Boat
+
+```sh
+brew install BasixKOR/tap/boat
+```
+
 ## DiscordChatExporter
 
 ```sh
