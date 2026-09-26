@@ -35,7 +35,10 @@ class Boat < Formula
   # only plain `boat-cli-vX.Y.Z` tags are what https://boat.dev/install serves (channel=prod).
 
   def install
-    bin.install File.basename(stable.url) => "boat"
+    # Release assets are bare binaries without the executable bit (upstream installer chmods them).
+    binary = File.basename(stable.url)
+    chmod 0755, binary
+    bin.install binary => "boat"
 
     # `--no-update` is a global flag; keeps the build from hitting the update-check endpoint.
     generate_completions_from_executable(bin/"boat", "--no-update", "completions")
